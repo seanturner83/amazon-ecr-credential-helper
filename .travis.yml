@@ -22,9 +22,9 @@ deploy:
   api_key:
     secure: UBPr/Bukwf0QWHpcdbQYQLlUlnz+s4bk0mh9Algm/UgoJ7WNLOWHfU37qYkunfEMUUwMboGMR0j5vfzmK9y36KS67xdc6oBNDqVLRAp9HvD/MRoorIrCc4oafpGbGiD+EpJGulrXWoeSMOjoWLhjrDE7fY7Ad8j3xbwX/A21awzc5VWoc2jXKhBPOfRRAnu+txTVM22mZtGP91aQGrIHKABXCv1yu6FsrI/YlcJuIC3E7K3tmjsxPMs3LJ7XxzoAkdTvN+qY5pEVa4EZ4ih7X8rdAYHIR26E0rAbSsm9bMfoi38CwJvv4Byhw+XSAboOBszKQ/GsZJ3P/hUiV7EdAFoU98PxtZ+ICJeJxmKppzKnQAp1WhsRuQWzaXt/x4DT7M3ZMon31gJn4RS+9nkuW1iv3yaAgzs7zHxYgllJXTMZMQxIy94Ua/hFQqxmKI3+oYT3uLwG+UmNg/uo5pfKXmckUQaEsDBWdyEHvLvGNO79rGbImZQ4Qm6d8ynLjWpe/HDa/pni3Nd+U2bNZ76MNmHr2rLbOmRc+BZx4n6yD1QJyN3UahtBytnylxKDIBwWuVciXA95Peh+GjNzPE+uBOXpiDlCav7s+uKGkbwYGuKPLG56kW4YN+U6zKJtafh//CUiS+WTdKdCliM8izmxrfOk0Lxun0lk8dabMIQ7C3c=
   file:
-  - login/cli/docker-credential-ecr-login_darwin_amd64
-  - login/cli/docker-credential-ecr-login_linux_amd64
-  - login/cli/docker-credential-ecr-login_windows_amd64.exe
+  - ecr-login/cli/docker-credential-ecr-login_darwin_amd64
+  - ecr-login/cli/docker-credential-ecr-login_linux_amd64
+  - ecr-login/cli/docker-credential-ecr-login_windows_amd64.exe
   on:
     repo: seanturner83/amazon-ecr-credential-helper
   all_branches: true
