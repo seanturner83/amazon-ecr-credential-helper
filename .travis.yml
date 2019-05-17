@@ -27,7 +27,8 @@ deploy:
   - ecr-login/cli/docker-credential-ecr-login_windows_amd64.exe
   on:
     repo: seanturner83/amazon-ecr-credential-helper
-  all_branches: true
+    all_branches: true
+    tags: true
 after_deploy:
 - ls -al
 - docker build -t seanturner83/amazon-ecr-credential-helper:${TRAVIS_TAG} -f Dockerfile
