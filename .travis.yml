@@ -12,6 +12,8 @@ script:
 - cd ecr-login && shopt -s globstar
 - sed -i 's/github.com\/awslabs\/amazon-ecr-credential-helper/github.com\/seanturner83\/amazon-ecr-credential-helper/g'
   **/*.go && cd ..
+- sed -i 's/github.com\/awslabs\/amazon-ecr-credential-helper/vendor\/seanturner83\/amazon-ecr-credential-helper/g'
+  **/*.go && cd ..
 - go get -t -v ./...
 - cd ecr-login/cli && CGO_ENABLED=0 gox -os="linux darwin windows" -arch="amd64" -verbose
   ./docker-credential-ecr-login
