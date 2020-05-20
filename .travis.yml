@@ -1,13 +1,13 @@
 language: go
 go:
-- 1.12.x
+- 1.13.x
 sudo: required
 services:
 - docker
 before_install:
 - go get github.com/mitchellh/gox
-install:
-- 
+go_import_path: github.com/awslabs/amazon-ecr-credential-helper
+install: make get-deps
 script:
 - cd ecr-login && shopt -s globstar
 - sed -i 's/github.com\/awslabs\/amazon-ecr-credential-helper/github.com\/seanturner83\/amazon-ecr-credential-helper/g'
@@ -31,7 +31,6 @@ deploy:
     tags: true
 after_deploy:
 - ls -al
-- docker build -t seanturner83/amazon-ecr-credential-helper:${TRAVIS_TAG} -f Dockerfile
-  .
+- docker build -t seanturner83/amazon-ecr-credential-helper:${TRAVIS_TAG} -f Dockerfile .
 - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
 - docker push "seanturner83/amazon-ecr-credential-helper:${TRAVIS_TAG}"
